@@ -36,6 +36,19 @@ const updateContact = (req,res) => {
     })
 }
 
+//@delete contact by id
+//@route DELETE api/conatcts/:id
+//@access PUBLIC
+const deleteContact = (req,res) => {
+    res.status(200).json({
+       "message": `contact deleted for ${req.params.id}`
+    })
+}
 
-
-module.exports = {getContacts, createContact, getContactById,updateContact};
+module.exports = {
+    getContacts,
+    createContact, 
+    getContactById,
+    updateContact, 
+    deleteContact
+};
