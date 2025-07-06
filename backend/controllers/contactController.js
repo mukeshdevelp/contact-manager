@@ -13,7 +13,7 @@ const getContacts = (req, res) => {
 //@route POST api/conatcts
 //@access PUBLIC
 const createContact = (req,res) => {
-    res.status(200).json({
+    res.status(201).json({
         "message": "contact created"
     })
 }
