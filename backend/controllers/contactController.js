@@ -23,7 +23,7 @@ const createContact = (req,res) => {
 //@access PUBLIC
 const getContactById = (req,res) => {
     res.status(200).json({
-        "message": "contact created"
+        "message": "getting  contact by id"
     })
 }
 
