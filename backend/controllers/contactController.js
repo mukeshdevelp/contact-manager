@@ -18,4 +18,13 @@ const createContact = (req,res) => {
     })
 }
 
-module.exports = {getContacts, createContact};
+//@get contact by id
+//@route get api/conatcts/:id
+//@access PUBLIC
+const getContactById = (req,res) => {
+    res.status(200).json({
+        "message": "contact created"
+    })
+}
+
+module.exports = {getContacts, createContact, getContactById};

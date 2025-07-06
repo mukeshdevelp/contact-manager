@@ -2,7 +2,7 @@ const express = require('express');
 
 
 const router = express.Router();
-const { getContacts, createContact } = require('../controllers/contactController')
+const { getContacts, createContact, getContactById } = require('../controllers/contactController')
 // importing all the routes written in server.js
 router.route('/').get(getContacts);
 
@@ -10,11 +10,7 @@ router.route('/').get(getContacts);
 router.route('/').post(createContact);
 
 //gettting individual contact based on id
-router.route('/:id').get((req,res) => {
-    res.status(200).json({
-        "message": `get contact for ${req.params.id}`
-    })
-})
+router.route('/:id').get(getContactById)
 router.route('/:id').put((req,res) => {
     res.status(200).json({
         "message": `update contact for ${req.params.id}`
