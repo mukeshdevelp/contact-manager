@@ -27,4 +27,15 @@ const getContactById = (req,res) => {
     })
 }
 
-module.exports = {getContacts, createContact, getContactById};
+//@put contact by id
+//@route UPDATE api/conatcts/:id
+//@access PUBLIC
+const updateContact = (req,res) => {
+    res.status(200).json({
+       "message": `update contact for ${req.params.id}`
+    })
+}
+
+
+
+module.exports = {getContacts, createContact, getContactById,updateContact};
