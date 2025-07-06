@@ -9,6 +9,13 @@ const getContacts = (req, res) => {
     })
 };
 
+//@create all conatcts
+//@route POST api/conatcts
+//@access PUBLIC
+const createContact = (req,res) => {
+    res.status(200).json({
+        "message": "contact created"
+    })
+}
 
-
-module.exports = {getContacts};
+module.exports = {getContacts, createContact};
