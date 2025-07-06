@@ -13,6 +13,8 @@ const getContacts = (req, res) => {
 //@route POST api/conatcts
 //@access PUBLIC
 const createContact = (req,res) => {
+    console.log(req.body);
+    
     res.status(201).json({
         "message": "contact created"
     })
