@@ -2,7 +2,7 @@
 //@route GET api/conatcts
 //@access PUBLIC
 
-const getContacts = (req, res) => {
+const getContacts = async (req, res) => {
     res.status(200).json({
 
         "message": "get all contacts"
@@ -12,9 +12,13 @@ const getContacts = (req, res) => {
 //@create all conatcts
 //@route POST api/conatcts
 //@access PUBLIC
-const createContact = (req,res) => {
+const createContact = async (req,res) => {
     console.log(req.body);
-    
+    const {name, email, contact} = req.body;
+    if(!(name|| email ||contact)){
+        res.status(400);
+        throw new Error("All fields are required")
+    }
     res.status(201).json({
         "message": "contact created"
     })
@@ -23,7 +27,7 @@ const createContact = (req,res) => {
 //@get contact by id
 //@route get api/conatcts/:id
 //@access PUBLIC
-const getContactById = (req,res) => {
+const getContactById = async (req,res) => {
     res.status(200).json({
         "message": "getting  contact by id"
     })
@@ -32,7 +36,7 @@ const getContactById = (req,res) => {
 //@put contact by id
 //@route UPDATE api/conatcts/:id
 //@access PUBLIC
-const updateContact = (req,res) => {
+const updateContact = async (req,res) => {
     res.status(200).json({
        "message": `update contact for ${req.params.id}`
     })
@@ -41,7 +45,7 @@ const updateContact = (req,res) => {
 //@delete contact by id
 //@route DELETE api/conatcts/:id
 //@access PUBLIC
-const deleteContact = (req,res) => {
+const deleteContact = async (req,res) => {
     res.status(200).json({
        "message": `contact deleted for ${req.params.id}`
     })
