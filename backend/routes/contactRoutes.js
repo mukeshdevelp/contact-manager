@@ -2,14 +2,9 @@ const express = require('express');
 
 
 const router = express.Router();
-
+const { getContacts } = require('../controllers/contactController')
 // importing all the routes written in server.js
-router.route('/').get((req, res) => {
-    res.status(200).json({
-
-        "message": "get all contacts"
-    });
-});
+router.route('/').get(getContacts);
 
 // making extra routes
 router.route('/').post((req, res) =>{
