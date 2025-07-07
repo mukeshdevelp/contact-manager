@@ -1,4 +1,4 @@
-const mongoose = require('mongoogse');
+const mongoose = require('mongoose');
 
 const contactSchema = mongoose.Schema({
     name:{
