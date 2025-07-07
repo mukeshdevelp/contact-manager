@@ -76,7 +76,7 @@ const deleteContact = asyncHandler(async (req, res) => {
     }
     // deleting from db
     await Contact.findByIdAndDelete(req.params.id);
-    res.status(200).json({ message: `Contact deleted for ${req.params.id}` });
+    res.status(200).json(contact);
 });
 
 module.exports = {
