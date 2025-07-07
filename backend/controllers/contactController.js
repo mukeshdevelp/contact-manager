@@ -25,9 +25,9 @@ const createContact = asyncHandler(async (req,res) => {
         email, 
         contact
     })
-    res.status(201).json({
+    res.status(201).json(
        phone
-    })
+    )
 })
 
 //@get contact by id
@@ -35,9 +35,13 @@ const createContact = asyncHandler(async (req,res) => {
 //@access PUBLIC
 const getContactById = asyncHandler
 (async (req,res) => {
-    res.status(200).json({
-        "message": "getting  contact by id"
-    })
+    const contact = await Contact.findById(req.params.id)
+    // there is a case when contact does not exist
+    if(!contact){
+        res.status(404)
+        throw new Error("contact not found");
+    }
+    res.status(200).json(contact)
 })
 
 //@put contact by id
