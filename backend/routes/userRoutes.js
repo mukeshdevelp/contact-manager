@@ -9,7 +9,7 @@ router.post('/register', (req,res) => {
 router.post('/login', (req,res) => {
     res.status(200).json({"message": "login page"})
 });
-router.post('/current', (req,res) => {
+router.get('/current', (req,res) => {
     res.status(200).json({"message": "current user page"})
 });
 
